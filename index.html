@@ -43,6 +43,18 @@
             background-color: var(--dark-blue);
             color: white;
         }
+        
+        .navbar-toggler {
+            border: none;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
 
         @media (max-width: 768px) {
             .text-center-mobile {
@@ -58,6 +70,22 @@
             ul {
                 padding-left: 0;
                 list-style-position: inside;
+            }
+            .navbar {
+                padding-top: 0.5rem !important;
+                padding-bottom: 0.5rem !important;
+            }
+            .dropdown-menu {
+                border: none;
+                background-color: transparent;
+                padding-left: 1.5rem;
+            }
+            .dropdown-item {
+                color: rgba(255, 255, 255, 0.7);
+            }
+            .dropdown-item:hover, .dropdown-item:focus {
+                color: #fff;
+                background-color: transparent;
             }
         }
     </style>
@@ -84,15 +112,8 @@
                     <li class="nav-item">
                         <a class="nav-link active text-white" href="#">About</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="services.html" role="button" data-bs-toggle="dropdown">
-                            Services
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="services.html#custom-applications">Custom Applications</a></li>
-                            <li><a class="dropdown-item" href="services.html#automation-workflows">Automation Workflows</a></li>
-                            <li><a class="dropdown-item" href="services.html#database-solutions">Database Solutions</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="services.html">Services</a>
                     </li>
                     <li class="nav-item ms-lg-3">
                         <a class="btn btn-light rounded-pill px-3 py-2 text-dark-blue" href="contact.html">Contact Us</a>
@@ -105,13 +126,13 @@
     <section class="bg-main hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-12 col-lg-6 mb-5 mb-lg-0 text-center-mobile">
+                <div class="col-12 col-lg-6 order-2 order-lg-1 mb-5 mb-lg-0 text-center-mobile">
                     <h1 class="text-capitalize mb-3">Go From Concept To Reality</h1>
                     <p class="mb-4">Bring your digital products to life quickly with no-code and
                         low-code solutions</p>
                     <a href="#" class="btn btn-dark-blue rounded-pill px-4 py-2">Get Inspired</a>
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 order-1 order-lg-2">
                     <div class="text-center">
                         <img src="./assets/hero-section.svg" alt="hero image" class="img-fluid" width="70%">
                     </div>
