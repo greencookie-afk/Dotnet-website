@@ -1,0 +1,38 @@
+# Enable PHP execution
+AddType application/x-httpd-php .php
+
+# Set default index file
+DirectoryIndex index.php index.html
+
+# Prevent directory listing
+Options -Indexes
+
+# Prevent access to .htaccess file
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Prevent access to sensitive files
+<FilesMatch "^(config\.php|functions\.php|.*\.sql)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Redirect errors to custom error pages
+ErrorDocument 404 /404.php
+ErrorDocument 403 /403.php
+
+# Enable URL rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Redirect to www version (uncomment if needed)
+    # RewriteCond %{HTTP_HOST} !^www\. [NC]
+    # RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+    
+    # Redirect to HTTPS (uncomment if needed)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>

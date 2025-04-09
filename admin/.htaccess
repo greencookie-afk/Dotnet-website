@@ -1,0 +1,30 @@
+# Secure admin directory
+AuthType Basic
+AuthName "Restricted Area"
+# AuthUserFile /path/to/.htpasswd
+# Require valid-user
+
+# Alternative PHP-based authentication (using our login system)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /admin/
+    
+    # Allow direct access to index.php and assets
+    RewriteCond %{REQUEST_URI} !^/admin/index\.php [NC]
+    RewriteCond %{REQUEST_URI} !^/admin/admin\.css [NC]
+    
+    # Check if user is not logged in
+    RewriteCond %{HTTP_COOKIE} !admin_logged_in=true [NC]
+    
+    # Redirect to login page
+    RewriteRule ^(.*)$ index.php [L,R=302]
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Prevent access to .htaccess file
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>

@@ -1,0 +1,91 @@
+/* Admin Panel Styles */
+
+:root {
+    --dark-blue: #0d2e4d;
+    --light-blue: #1e5b94;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+}
+
+body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--gray-800);
+    line-height: 1.6;
+}
+
+.bg-dark-blue {
+    background-color: var(--dark-blue);
+}
+
+.text-dark-blue {
+    color: var(--dark-blue);
+}
+
+.btn-dark-blue {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+.btn-dark-blue:hover {
+    background-color: var(--light-blue);
+    color: white;
+}
+
+.sidebar {
+    min-height: 100vh;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-link {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar-link:hover, .sidebar-link.active {
+    background-color: rgba(13, 46, 77, 0.1);
+    color: var(--dark-blue);
+}
+
+.sidebar-heading {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+    color: #6c757d;
+}
+
+.stat-card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.message-row {
+    cursor: pointer;
+}
+
+.message-row.unread {
+    font-weight: bold;
+    background-color: rgba(13, 46, 77, 0.05);
+}
+
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+}
